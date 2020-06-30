@@ -3,6 +3,16 @@ package org.cahyana.demo;
 public class Triangle {
 	
 	private String type;
+	private int hight;
+	
+	public Triangle(String type, int hight) {
+		this.type = type;
+		this.hight = hight;
+	}
+	
+	public int getHight() {
+		return hight;
+	}
 	
 	public String getType() {
 		return type;
@@ -13,6 +23,6 @@ public class Triangle {
 	}
 
 	public void draw() {
-		System.out.println(getType() + " Triangle drawing");
+		System.out.println(getType() + " Triangle drawing of height " + getHight());
 	}
 }
