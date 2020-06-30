@@ -5,5 +5,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
         
 
-	<bean id="triangle" class="org.cahyana.demo.Triangle"></bean>
+	<bean id="triangle" class="org.cahyana.demo.Triangle">
+		<property name="type" value="Equilateral"></property>
+	</bean>
 </beans>
