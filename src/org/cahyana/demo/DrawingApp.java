@@ -3,6 +3,7 @@ package org.cahyana.demo;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
@@ -16,7 +17,8 @@ public class DrawingApp {
 //		Triangle triangle = factory.getBean("triangle", Triangle.class);
 		
 		// spring.xml lokasi beradad dibawah src
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		context.registerShutdownHook();
 		Triangle triangle = context.getBean("triangle-alias", Triangle.class);
 		triangle.draw();
 	}

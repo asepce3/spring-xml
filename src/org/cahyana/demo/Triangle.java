@@ -1,13 +1,10 @@
 package org.cahyana.demo;
 
-import java.util.List;
-
-import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
-
-public class Triangle implements ApplicationContextAware { // untuk mendapatkan context
+public class Triangle implements InitializingBean, DisposableBean {
 
 	private Point pointA;
 	private Point pointB;
@@ -45,7 +42,12 @@ public class Triangle implements ApplicationContextAware { // untuk mendapatkan 
 	}
 
 	@Override
-	public void setApplicationContext(ApplicationContext context) throws BeansException {
-		this.context = context;
+	public void destroy() throws Exception {
+		System.out.println("Destroying Triangle bean");
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Initializing Triangle bean");
 	}
 }
