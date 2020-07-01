@@ -7,6 +7,10 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean id="triangle" class="org.cahyana.demo.Triangle" autowire="byName"></bean>
+	
+	<bean id="circle" class="org.cahyana.demo.Circle">
+		<property name="center" ref="pointA"></property>
+	</bean>
 
 	<bean id="pointA" class="org.cahyana.demo.Point">
 		<property name="x" value="${pointA.pointX}"></property>

@@ -19,8 +19,11 @@ public class DrawingApp {
 		// spring.xml lokasi beradad dibawah src
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
-		Triangle triangle = context.getBean("triangle-alias", Triangle.class);
+		Shape triangle = (Shape) context.getBean("triangle-alias");
 		triangle.draw();
+		
+		Shape circle = (Shape) context.getBean("circle");
+		circle.draw();
 	}
 
 }
