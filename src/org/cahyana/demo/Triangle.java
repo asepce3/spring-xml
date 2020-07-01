@@ -2,11 +2,17 @@ package org.cahyana.demo;
 
 import java.util.List;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+
+public class Triangle implements ApplicationContextAware { // untuk mendapatkan context
 
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	private ApplicationContext context;
 
 	public Point getPointA() {
 		return pointA;
@@ -36,5 +42,10 @@ public class Triangle {
 		System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
 		System.out.println("Point B = (" + getPointB().getX() + ", " + getPointB().getY() + ")");
 		System.out.println("Point C = (" + getPointC().getX() + ", " + getPointC().getY() + ")");
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		this.context = context;
 	}
 }
