@@ -6,7 +6,8 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<bean id="triangle" class="org.cahyana.demo.Triangle" autowire="byName"></bean>
+	<bean id="triangle" class="org.cahyana.demo.Triangle" autowire="byName" 
+	init-method="myInit" destroy-method="cleanUp"></bean>
 
 	<bean id="pointA" class="org.cahyana.demo.Point">
 		<property name="x" value="0"></property>
