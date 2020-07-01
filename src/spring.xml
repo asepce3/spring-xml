@@ -9,7 +9,6 @@
 	<bean id="triangle" class="org.cahyana.demo.Triangle" autowire="byName"></bean>
 	
 	<bean id="circle" class="org.cahyana.demo.Circle">
-		<property name="center" ref="pointA"></property>
 	</bean>
 
 	<bean id="pointA" class="org.cahyana.demo.Point">
@@ -29,6 +28,7 @@
 	
 	<alias name="triangle" alias="triangle-alias"/>
 	
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
 	<bean class="org.cahyana.demo.MyBeanFactoryPostProcessor"></bean>
 	
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
