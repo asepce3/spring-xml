@@ -27,4 +27,6 @@
 		<property name="x" value="0"></property>
 		<property name="y" value="0"></property>
 	</bean>
+	
+	<alias name="triangle" alias="triangle-alias"/>
 </beans>
