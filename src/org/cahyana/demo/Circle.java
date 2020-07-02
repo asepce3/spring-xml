@@ -7,7 +7,10 @@ import javax.jws.Oneway;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+// otomatis dibuatkan beannya
+@Component
 public class Circle implements Shape {
 
 	private Point center;

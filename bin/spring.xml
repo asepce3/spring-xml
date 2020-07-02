@@ -39,4 +39,6 @@
 	</bean>
 	
 	<context:annotation-config></context:annotation-config>
+	<!-- tambahkan scan-component -->
+	<context:component-scan base-package="org.cahyana.demo" />
 </beans>
