@@ -17,6 +17,7 @@ public class DrawingApp {
 //		Triangle triangle = factory.getBean("triangle", Triangle.class);
 		
 		// spring.xml lokasi beradad dibawah src
+		// aktifkan registerShutdownHook
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
 		Shape triangle = (Shape) context.getBean("triangle-alias");

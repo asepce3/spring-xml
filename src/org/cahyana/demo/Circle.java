@@ -1,6 +1,9 @@
 package org.cahyana.demo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import javax.jws.Oneway;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,4 +30,13 @@ public class Circle implements Shape {
 		System.out.println("Circle Point is: (" + center.getX() + ", " + center.getY() + ")");
 	}
 
+	@PostConstruct
+	public void init() {
+		System.out.println("Initializing circle");
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("Destroying circle");
+	}
 }
