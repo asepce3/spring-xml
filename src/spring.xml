@@ -38,6 +38,15 @@
 		<property name="locations" value="pointsconfig.properties"></property>
 	</bean>
 	
+	<!-- Menambahkan bean messagesource -->
+	<bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<util:list>
+				<value>pesanku</value>
+			</util:list>
+		</property>
+	</bean>
+	
 	<context:annotation-config></context:annotation-config>
 	<!-- tambahkan scan-component -->
 	<context:component-scan base-package="org.cahyana.demo" />
