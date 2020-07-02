@@ -1,5 +1,7 @@
 package org.cahyana.demo;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -11,8 +13,10 @@ public class Circle implements Shape {
 		return center;
 	}
 
-	@Autowired
-	@Qualifier("tengah")
+	/*
+	 * @Resuorce - Secara default melakukan injeksi berdasarkan nama bean
+	 */
+	@Resource(name = "pointB")
 	public void setCenter(Point center) {
 		this.center = center;
 	}
